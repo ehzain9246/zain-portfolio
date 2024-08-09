@@ -1,50 +1,184 @@
-=== Simply Static ===
-Contributors: codeofconduct
-Tags: html, static website generator, static site, secure, fast
-Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 2.1.0
+=== Simply Static - The WordPress Static Site Generator ===
+Contributors: patrickposner
+Tags: static site generator, performance, security, jamstack
+Requires at least: 6.3
+Tested up to: 6.6
+Requires PHP: 7.4
+Stable tag: 3.1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create a static copy of your WordPress site that you can serve on your favorite web server.
+Create a static website directly from your WordPress website with Simply Static.
 
 == Description ==
 
-Simply Static is a static site generator for WordPress that helps you create a static site that you can serve separately from your WordPress installation. This provides a couple benefits. One, this allows you to keep WordPress in a secure location that no one can access but you. Two, your static site is going to be really, _really_ fast.
+Simply Static is a static site generator that converts your existing WordPress website to a static website that you can host on your server, a static hosting provider, or a CDN.
 
-= Security =
+It drastically improves the performance of your website and minimizes security risks as it removes the connection between your traditional server and your static website.
 
-WordPress is used by [one in four websites](http://venturebeat.com/2015/11/08/wordpress-now-powers-25-of-the-web/). That makes it a prime target for hackers. There are a lot of ways that your site can be compromised, but two-thirds of all hacks are caused by [vulnerabilities in WordPress plugins, themes, and core files](https://www.wordfence.com/blog/2016/03/attackers-gain-access-wordpress-sites/).
+Simply Static can also be used by local development tools like LocalWP or Lando to develop your website offline and push the static site online.
 
-Keeping WordPress secure requires constant vigilance. Exploits are being found for WordPress themes and plugins every day. Even WordPress itself has critical vulnerabilities from time to time. If you don’t stay on top of updates, your site *will* get hacked. It’s just a matter of when.
-
-But what if there was an easy way to keep WordPress secure? What if you could lock WordPress away somewhere where no one can get to it but you?
-
-With Simply Static you can put your WordPress installation in a secure location and publish a static site for the rest of the world to see. You can keep WordPress at a secret URL, protect it with .htaccess, or even put it behind a VPN. Simply Static will create static copies of all of the pages from your WordPress installation and replace the URLs to match where you’ll be hosting it.
+This reduces your hosting costs to zero (depending on your requirements and the used service/provider).
 
 = Performance =
 
-Every time you visit a WordPress page it needs to perform database queries to fetch content and run PHP code to render the page. These actions take time to perform.
+Converting your website to a static website can drastically improve your performance. Simply Static eliminates all requests to your database and by that reducing the first time to byte.
 
-With Simply Static, you’re creating a static copy of all of your WordPress pages. That time to create each page is incurred once, when Simply Static runs. When someone visits your static site they can instantly receive the page because Simply Static already did the work of creating it.
+This is especially impactful for websites that use long pages with a lot of animations, graphs, and other load-heavy tools like sliders.
 
-Depending on the complexity of your site, theme, and plugins, using a static site can easily increase the performance of your site by 10x.
+= Security =
 
-= Other Similar Plugins =
+Removing the connection to your database and traditional server reduces the risk of getting hacked. 
 
-In the event that Simply Static doesn't meet your needs, give this plugin a try:
+This reduces the stress to keep your WordPress website up to date and keeps your data secure (locally or in a protected environment).
 
-- [WP Static HTML Output](https://wordpress.org/plugins/static-html-output-plugin/)
+= Reduce hosting costs =
 
-It's updated regularly and the author is responsive to support requests.
+Using Simply Static to deploy your website to one of the static hosting providers, a CDN or an S3 bucket reduces the amount of money required for reliable web hosting.
+
+With the right setup, you can even host your website completely for free (Cloudflare Pages and GitHub Pages for example).
+
+= Local development =
+
+Develop your site locally and only push the static exported website on a server. To ensure everything works as expected I created a list of development tools that are completely supported:
+
+* [LocalWP](https://localwp.com/)
+* [lando](https://docs.lando.dev/)
+
+I highly recommend not to use another tool for local development if you are not a programmer as in most cases manual package installation is required.
+
+== Simply Static Pro ==
+
+The pro version of Simply Static enhances the plugin with various features.
+
+[youtube https://www.youtube.com/watch?v=PTuw1ChYCdI]
+
+= GitHub Integration =
+
+With the GitHub integration, you can completely automate your entire development process.
+
+The only thing you need is a GitHub account, no knowledge of Git or GitHub itself is required, as Simply Static Pro handles the entire process for you and keeps your repository up to date.
+
+This allows deploying your static website to:
+
+* GitHub Pages
+* Cloudflare Pages
+* Netlify
+* Vercel
+
+= AWS S3 Integration =
+
+Export directly to Amazon AWS S3 from Simply Static Pro. Connect your bucket and run your export.
+
+= SFTP =
+
+Export directly to a remote SFTP server. Connect your server and run your export.
+
+= BunnyCDN Integration =
+
+Export directly to BunnyCDN and get all the benefits of their CDN - including caching, file optimization and DNS management.
+
+
+= Incremental-, Builds and Single Exports =
+
+Use Incremental Exports to update only changes to your static website. No configuration needed, just choose Update and run the export.
+
+Use Build Exports to quickly roll out global changes to your static website. Want to update your style.css file? Or a new plugin? Use a build export.
+
+Use Single Exports to quickly publish new pages and posts to your static site. This also supports scheduled posts.
+
+= Forms =
+
+Simply Static Pro supports Contact Form 7 and Gravity Forms to use on your static website.
+
+You can decide if you want to use an external service like Zapier and IFTTT or if your original WordPress website should handle the submission and send you an e-mail with all the details.
+
+
+= Search =
+
+Use a fully static search solution that does not rely on any Third-Party-Providers. It uses Fuse.js and creates an index of your whole website as a JSON file.
+
+The search supports autosuggestion and fuzzy logic and is by default way more convenient than your default WordPress search.
+
+
+= Comments =
+
+Enable comments on your static website without the requirement of Third-Party-Providers. Use your original WordPress website to process the comment.
+
+After a comment was submitted, Simply Static automatically exports a new static version of the post. You don't have to do anything.
+
+
+= Multilingual =
+
+Use WPML, Polylang or TranslatePress and run static exports per language or all at once.
+
+Simply Static Pro also supports configuring settings per language, using the available language switchers and more to export a your multilingual website as easy as possible.
+
+
+= WP-CLI =
+
+Simply Static Pro has a detailed and comprehensive integration with WP-CLI.
+
+Control every option, run different kinds of exports and more with the WP-CLI integration.
+
+= Minification =
+
+Automatically minfiy HTML, CSS and JavaScript files on your static site.
+
+We can even minify inline CSS & JavaScript.
+
+= Image Optimization =
+
+Automatically optimize images on your static website with our ShortPixel API integration.
+
+= Optimization =
+
+Replace default WordPress paths and completely hide that you are using WordPress behind the scenes.
+
+Replace:
+
+* wp-content
+* wp-includes
+* wp-content/plugins/
+* wp-content/themes/
+* wp-content/uploads/
+
+
+Hide & Disable:
+
+Disabled unwanted features in WordPress before running an static export like:
+
+* XML-RPC
+* REST API URLs
+* Emoji support
+* Shortlink support
+* WordPress version in HTML
+
+and much more.
+
+= Get the Pro version =
+
+You can get the pro version [here](https://simplystatic.com/pro/).
+
+= Tutorials =
+
+We publish new tutorials on how to work with Simply Static and other tools on our blog.
+
+You can check the latest tutorials [here](https://simplystatic.com/tutorials/)
+
+= Documentation =
+
+We have a super extensive documentation that covers every aspect of Simply Static and Simply Static Pro.
+
+You can check the documentation [here](https://docs.simplystatic.com)
+
 
 == Installation ==
 
 1. Log into your WordPress website.
 2. On the left menu, hover over Plugins and then click on Add New.
 3. In the Search Plugins box, type in "Simply Static" and press the Enter key.
-4. You will see a list of search results which should include the Simply Static plugin. Click on the Install Now button to install the plugin.
+4. You will see a list of search results that should include the Simply Static plugin. Click on the Install Now button to install the plugin.
 5. After installing the plugin you will be prompted to activate it. Click on the Activate Plugin link.
 6. The Simply Static plugin is now installed and can be found on the left menu.
 
@@ -59,15 +193,17 @@ or
 
 Simply Static generates static (HTML) copies of your WordPress pages. It works a bit like a web crawler, starting at the main page of your website and looking for links to other pages to create static copies of. It also includes any images, CSS & JS files, and any other files that it can find a link to.
 
-As Simply Static is creating the static pages, it will automatically replace the URLs for the WordPress installation with either (a) absolute URLs, at a domain of your choice or (b) relative URLs, so you can host the static files on any domain or (c) URLs constructed for offline use, so you can browse the site locally on your own computer.
+As Simply Static is creating the static pages, it will automatically replace the URLs for the WordPress installation with either (a) absolute URLs, at a domain of your choice or (b) relative URLs, so you can host the static files on any domain or (c) URLs constructed for offline use, so you can browse the site locally on your computer.
 
 = Who should use Simply Static? =
 
-Simply Static is great for sites with no user interactivity, such as blogs (with comments disabled) or brochure-ware sites for small businesses (with no forms).
+Pretty much everyone, besides e-commerce or membership sites. They require a serious amount of interaction and user accounts, which are not available on a static website.
 
 = Are there any limitations? =
 
-Yes. Simply Static is only able to create a static copy of an *entire* site. It cannot selectively create static copies of specific pages, such as recently added posts. This means that if you have a site with 20,000 posts, and you add a new post, Simply Static will create a static copy of all 20,001 posts. This, combined with the fact that the plugin doesn't provide any kind of progress notification, means that Simply Static will provide a less-than-optimal experience for very large WordPress sites. We do plan to support very large sites eventually.
+You can not use plugins that require a login as there is no account system on a static website. This applies to e-commerce (like WooCommerce) or membership sites.
+
+Also, a website that relies heavily on ajax to update content in real-time is not the best project for Simply Static as a serious amount of custom development would be required.
 
 = How do I set up Simply Static? =
 
@@ -77,29 +213,485 @@ If www.example.com is on the same server as your WordPress installation, you can
 
 = Will this plugin interfere with other plugins? =
 
-No, Simply Static will not interfere with other plugins. In fact, Simply Static works well alongside other plugins, such as plugins to improve your site's SEO.
+No, Simply Static will not interfere with other plugins. Simply Static works well alongside other plugins, such as plugins to improve your site's SEO.
 
 Simply Static creates a static copy of your website, which is just a collection of files: HTML, CSS, JS, images, etc. Any functionality that requires PHP code will not work with that static copy. That includes, but is not limited to: blog post comments, contact forms, forums, membership areas, and eCommerce.
 
-Note that you can achieve much of this functionality by using plugins that interact with third-party services. For example, for blog post comments you could use [Disqus](https://wordpress.org/plugins/disqus-comment-system/) and for forms you could use [Wufoo](https://wordpress.org/plugins/wufoo-shortcode/).
+Note that you can achieve much of this functionality by using plugins that interact with third-party services or Simply Static Pro.
 
 = How is Simply Static different from cache plugins? =
 
-Cache plugins -- such as W3 Total Cache or WP Super Cache -- make your existing WordPress site faster by caching pages as they're visited. This makes your site much faster, but still leaves your WordPress installation accessible to the outside world. Unless you keep on top of updates, your WordPress installation can become vulnerable to hackers due to security vulnerabilities that are found over time.
+Cache plugins -- such as W3 Total Cache or WP Super Cache -- make your existing WordPress site faster by caching pages as they're visited. This makes your site much faster but still leaves your WordPress installation accessible to the outside world. Unless you keep on top of updates, your WordPress installation can become vulnerable to hackers due to security vulnerabilities that are found over time.
 
-Simply Static creates a static copy of your WordPress site that is intended to be used completely separately from your WordPress installation. Your WordPress installation lives on one server and your static site is served on a different server. Or, they're both on the same server, but your WordPress installation is restricted to only allow access from certain ip addresses or with an additional username/password requirement. Your static site is just a collection of static files with no server-side code or database -- nothing for hackers to hack -- while your WordPress installation remains safe and secure.
-
-= Does Simply Static work on Windows hosts? What about WAMP? =
-
-No. We haven't done any testing on Windows and, based on user feedback, it seems like it is not working on Windows presently.
+Simply Static creates a static copy of your WordPress site that is intended to be used completely separately from your WordPress installation. Your WordPress installation lives on one server and your static site is served on a different server. Or, they're both on the same server, but your WordPress installation is restricted to only allow access from certain IP addresses or with an additional username/password requirement. Your static site is just a collection of static files with no server-side code or database -- nothing for hackers to hack -- while your WordPress installation remains safe and secure.
 
 == Screenshots ==
 
-1. This is what the Simply Static Generate page looks like after you've generated your static files. While Simply Static is running, you can view it's progress in the Activity Log. Once Simply Static has finished running, we'll show you exactly which files we made a static copy of in the Export Log.
-2. The Simply Static General Settings page. With the Destination URLs option you can select how you want URLs to show up on your static site. And for the Delivery Method you have the choice of creating a ZIP archive or saving the files to a directory on the server.
-3. On the Include/Exclude page, you can select additional URLs, files, or directories to include in your static site. And you can also choose URLs (or URL patterns) to exclude from your static site.
+1. Generate
+2. Settings
+3. Diagnostics
 
 == Changelog ==
+
+= 3.1.7.4 =
+
+* fixed PHP notice related to server_cron setting
+* fixed basic auth validation in admin area
+
+= 3.1.7.3 =
+
+* added new integration settings page
+* added admin bar as integration + toggle to enable/disable it
+* improved performance for diagnostics check (caching)
+* removed unused http_request_args filter
+* MU network page UI fixes
+* added quick links to plugins page
+* added option to whitelist plugins in diagnostics
+* restructed "Misc" settings and renamed to "Debug"
+* added option to use server-side cron job
+* adapted Jetpack integration to new integration class
+
+= 3.1.7.2 =
+
+* added Jetpack integration
+* removed DO integration admin UI code
+* added progress bar to admin bar
+* Diagnostics sub menu page + notification center
+* removed can_wp_make_requests_to_itself() check
+* fixed PHP notices for PHP 8.3 compatibility
+* simplified log file output for certain deployment options
+* composer dependencies updated
+
+
+= 3.1.7.1 =
+
+* improved hash validation for record storage in DB
+* smaller UI improvements
+* auto-generate index.html for feed URLs
+
+= 3.1.7 =
+
+* Official PHP 8.2 and 8.3 support + fixes for various PHP notices
+* fixed saving multiline settings savings process
+* improved default settings on first installation + reset
+* extended the match_tags list for better XML support
+* improved URL handling when creating 404 pages
+* automated 404 page handling for various deployment options
+* added cache detection solution as part of diagnostics
+* added incompatible plugin detection as part of diagnostics
+* added notification logic if tests in diagnostics fail
+* improved XML sitemap handling in all SEO integrations
+* auto-include robots.txt file if exists
+
+= 3.1.6.3 =
+
+* no more filesize limits on wp_remote_get()
+* removed empty settings page on network admin
+* improved various descriptions + added links to the documentation
+* added filter to set conditions before clearing local directory
+* avoid clearing special characters from Basic Auth credentials
+* auto-cancel export if Basic Auth is set and credentials don't match
+* improved default settings handling
+* extended plugin compatibility list up to 100 (from 30)
+* unified 404 page option for CDN exports
+
+= 3.1.6.2 =
+
+* new filter for extended DOM manipulation
+* fixed typos for optimization settings
+* exclude builds and single exports from clear directory
+
+= 3.1.6.1 =
+
+* modified default parameters for ss_remote_args filter (file size based on uploads limit)
+
+= 3.1.6 =
+
+* new multisite integration (network, import/export subsites)
+* improved 404 page handling
+* improved secure debug log handling
+* plugin compatibility database integration
+* admin UI improvements (labels, helper texts..)
+* updated translation files
+* improved version output in admin UI
+
+= 3.1.5 =
+
+* refactored additional settings
+* introduced setting for origin URL
+* removed unused helper methods
+* improved requests to itself check in diagnostics
+* improved sanitization for multiline fields
+* load textdomain in init hook instead of plugins_loaded
+* NPM packages updated to latest releases
+
+
+= 3.1.4 =
+
+* added log for replacing 404 pages
+* fix for 404 page in local directory exports
+* clear log before running new export to avoid big file sizes
+* extended ss_remote_args filter with async requests + max file size per request
+* improved sanitization for import/export settings
+* added filter for local URL check
+* improved secure log handling (dynamic filename + .htaccess rule)
+
+= 3.1.3 =
+
+* JS dependencies updated
+* refactored filter implementation for tasks
+* added check for empty strings in excludes
+* removed unused blog_id check
+* changed location of debug log to uploads dir
+* check for Rest API in diagnostics
+* increased PHP version for diagnostics >= 8.0
+* whitelist Freemius API calls if Basic Auth enabled
+
+= 3.1.2 =
+
+* WordPress 6.4 compatibility
+* Improved clearing logs
+* improved capability filter
+
+= 3.1.1 =
+
+* improved admin UI descriptions in general settings
+* added support for 404 pages
+* added error message to WP_Error when archive dir cannot be created
+* added add_status_message method to Simply_Static\Options for WP CLI handling
+
+= 3.1.0 =
+
+* fix for scheme/host when resetting settings
+* enhanced integration setups (GitHub objects)
+* fixed example for relative path setups in settings
+
+
+= 3.0.9 =
+
+* PHP 8.2 support improved
+* wp_parse_url instead of just parse_url for fetching URLs
+* enhanced default options
+* increased min WP version
+
+= 3.0.8 =
+
+* SimplyCDN auto include files
+* min WP version increased to 6.2
+* improved wording for progress in export log
+* improved Basic Auth handling
+* improved absolute URL replacement
+* Elementor integration: prevent replacing non strings in HTML
+
+
+= 3.0.7 =
+
+* SimplyCDN setting now in React Admin UI
+* filter for capabilities in Rest routes
+* SimplyCDN improvements for webhook handling
+
+
+= 3.0.6 =
+
+* removed type hints in Rest API abstraction for PHP 7.4 support
+* make sure we only trigger maybe_wp_die() if there is an error on export
+
+= 3.0.5 =
+
+* fixed incompatibility with EWWW image optimizer
+
+= 3.0.4 =
+
+* simplified url_exclude upgrade on update
+* disable browser autocomplete on basic auth settings
+* added additional notice with button in settings panel if all auto-migration fails
+
+= 3.0.3 =
+
+* specific version check for migration handler
+* fixed schema option updates
+
+= 3.0.2 =
+
+* fixed iterator for "clear_local_directory" option
+* reworked "force_replace_urls" to the new options patterns (boolean)
+
+= 3.0.1 =
+
+* prevent error on merge excludes if not an array
+* bust object cache after migration
+
+= 3.0 =
+
+* new admin UI for settings
+* new admin UI for diagnostics
+* new admin UI for generate
+* ported ajax requests to Rest API for better performance and maintainability
+* improved diagnostics with better (and more meaningful) error messages
+* conditional settings for certain setups
+* improved support for Windows Azure (path conversion)
+* auto-migration from old settings + manuall trigger
+* import and export settings via JSON
+
+= 2.3.2 =
+
+* bugfix: Elementor asset loading via webpack
+* repositioned filter for HTTPS args to be able to modify all arguments
+* latest version of WP Background processing added
+
+= 2.3.1 =
+
+* improved Elementor asset handling (free and pro version)
+* new filter to modify excludes
+
+= 2.3.0 =
+
+* fix for Yoast sitemap inclusion
+* better approach to extract URLs from HTML
+* added support for WP-CLI integration
+* better task handling with ajax and WP-Cron with progress without reload
+* better quote handling in JSON
+* improved SimplyCDN integration and security token handling
+* fix for redirect pages by removing query args before saving
+* fix for Elementor Pro for data attributes
+
+= 2.2.9 =
+
+* constants for Simply CDN implemented
+* remaining pages as argument in fetch URLs task
+* fixed log updates if running with WP-Cron
+* match_tags improvements for lazyload
+* fixed inline CSS extraction to avoid trailingslash for hexcodes
+
+= 2.2.8 =
+
+* SimplyCDN form improvement for Elementor forms
+* reset settings now in Advanced tab
+* removed unused settings for MU integration
+* added <span> tags to match_tags list
+* improved XML Sitemap handling with Yoast SEO
+* lowered min cURL version in diagnostics
+
+= 2.2.7 =
+
+* SimplyCDN integration
+* added hooks for multisite integration
+* Elementor Pro support (Lottie files and videos)
+* fixed log time with correct timezone
+* removed WP-Cron option, now handled automatically
+
+= 2.2.6 =
+
+* fixed typo in CookieYes integration class
+
+= 2.2.5 =
+
+* integration for CookieYes GPDR plugin
+* integration for Brizy Builder (image extraction)
+* fixed 301 redirections with Redirection plugin
+* fallback solution for existing pages not being crawled due to URL parameter
+
+= 2.2.4 =
+
+* reverted blackslash extraction producing invalid markup in CSS + JS
+* remember configuration for destination (while switching options)
+* unique nonce for Simply Static Ajax request to fix conflict with MiniOrange SSL On plugin
+* removed simply_static_page query parameters from URL on static site
+* automatically remove quotation marks on save additional URL/File
+
+= 2.2.3 =
+
+* min PHP version increased to 7.4
+* ability to include files without filetype (_header)
+* Elementor support for bundled JS files
+* improved URL extraction in JS and HTML files
+
+= 2.2.2 =
+
+* XML Sitemap auto-include for Yoast
+* XML Sitemap auto-include for RankMath
+* XML Sitemap auto-include for AllInOneSEO
+* XML Sitemap auto-include for SEOPress
+
+= 2.2.1.1 =
+
+* improved path conversion for Windows
+* more fail-safe check for deleting local directory before export
+* WPCS code style updates
+
+= 2.2.1 =
+
+* fixed path resolution on local path exports
+
+= 2.2 =
+
+* improved URL replacement in script tags
+* fixed clear directory before export when using local path exports
+* added action fired after ZIP file created
+* fixed path replacement for Windows filesystems in Additional Files and Directories
+* untrailingslash path on transfer files locally
+
+= 2.1.9 =
+
+* flag for cron execution with UNIX cron
+* additional save button in advanced settings
+* added filter to change the zip file name
+* increased refresh time for Ajax ping
+
+= 2.1.8 =
+
+* new option to replace URLs with regex
+* new option to clear local directory before running a new export
+* decreased default batch size to prevent timeouts
+* decreased ping timer for faster log views
+* added filter to modify remote_get arguments
+* add actions to send messages/notifications based on task progress (ss_completed)
+
+= 2.1.7.1 =
+
+* added exception handling for <style> and <script> tag extractions
+
+= 2.1.7 =
+
+* improved Basic Auth handling allowing access for external APIs
+* parse content of script tags for URL replacements
+* improved tags with HTML5 tags for header, footer, section and figure
+* added style attributes to match_tags for a, div, section and more
+
+= 2.1.6 =
+
+* adding <link> and <meta> tags to extractor class
+* validating URLs in meta tags and update them
+
+= 2.1.5.9 =
+
+* better decoding/encoding of URLs
+* added filter to modify default file extension
+* improved tag based extraction and removed catch all
+* added <picture> tags to extractor
+* increased default batch size
+* file path check improvements
+
+= 2.1.5.8 =
+
+* added SSL to diagnostics
+* added filter for origin URL
+* increased general ping time
+* Windows support: replacing paths
+
+= 2.1.5.7 =
+
+* http_request_args filter added for better performance with Basic Authentication
+* Windows compatibility fix for path conversion
+* reverted delete local directory for local dir exports (original merge request)
+* added filter for options getter
+* cleaned up WP Cron conditional
+
+= 2.1.5.6 =
+
+* fixed non-valid HTML character error
+* UI improvement for running static exports
+* better http_request_args filter usage
+* ss_before_static_export action added
+* udpdated dependencies
+
+= 2.1.5.5 =
+
+* cleaned up upgrade handler
+
+= 2.1.5.4 =
+
+* reverted meta tags in extraction
+
+= 2.1.5.3 =
+
+* webp support (source tag)
+* imagify support
+* action to trigger functions before static export
+* added meta tags to extractor for twitter cards and og tags
+* added filter to extend matched_tags
+* added action to run before static export
+* updated composer dependencies
+
+= 2.1.5.2 =
+
+* introduced ss_finished_fetching_pages hook
+* introduced ss_finished_transferring_files_locally hook
+* fixed DB migration process performance issue
+* small CSS fixed for actions class
+
+= 2.1.5.1 =
+
+* fixed migration on reset for new post_id db field
+
+= 2.1.5 =
+
+* default export without cron
+* fixed generation of RSS feeds
+* better support for Yoast XML Sitemap in additional URLs
+* added option to change cron on/off
+* better URL validation
+* Windows support for slash URLs
+* actions for custom parsers (Blocksy theme compatibility)
+* enhanced matched_tags list (added srcset)
+* fixed upgrader class for DB migration
+* smaller CSS admin improvements
+* fixed Logo saving it without font requirements
+* better additional URL validation checks
+* removed send debug log mail
+* modified method visibility for fetch URLs task
+* added complete german translations
+
+= 2.1.4.2 =
+
+* removed more commas for apply_filters to prevent execution error on some environments
+
+= 2.1.4.1 =
+
+* removed comma for apply_filters to prevent execution error on some environments
+
+= 2.1.4 =
+
+* new admin UI
+* check for WP cron
+* check for PHP XML extension
+* fallback if cron not available
+* CSS improvements
+
+
+= 2.1.3 =
+
+* dispatch execution to cron for larger exports
+* fixed download URL for zip files
+* added support for custom head tags added in wp_head hook
+* parsing Rankmath sitemap if added to additional files
+* removing uploads folder from additional files setting
+
+= 2.1.2.1, February 04, 2021 =
+
+* increased min PHP version to 7.2.5
+* wp_die() if lower PHP version is available
+* increases min version in diagnostics
+
+= 2.1.2, February 04, 2021 =
+
+* added composer support
+* updated dependencies
+* more fail-safe bootup
+* Added sorting by status code
+* removed wp_mail_content_type filter
+* Fixed PHP notices for PHP 7.4 support
+* new composer package for simplehtmldom with Symfony Finder
++ improved doc blocks for models and tasks
+* auto exclude wp-JSON and wp-login.php from export
+* trailing slash / untrailingslash check pages
+
+= 2.1.1, December 20, 2020 =
+
+* Fixed PHP Dom parser for later PHP versions
+* removed PHP faker due to end of development
+* little color modifications in admin areas
+* new plugin header and readme
 
 = 2.1.0, May 12, 2017 =
 
@@ -107,7 +699,7 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 
 = 2.0.7, April 7, 2017 =
 
-* Fix: Non-latin characters should no longer get converted to HTML entities (thanks xi80r6!)
+* Fix: Non-Latin characters should no longer get converted to HTML entities (thanks xi80r6!)
 
 = 2.0.6, April 4, 2017 =
 
@@ -146,7 +738,7 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 * New: Added support for Accelerated Mobile Pages (AMP) HTML attributes
 * Fix: URLs containing the WP URL as a query param will rewrite the param with the new URL
 * Fix: Non-WP URLs in the Additional URLs section no longer cause Simply Static to hang
-* Fix: Zip creation will no longer throw errors when trying to process 0 byte files
+* Fix: Zip creation will no longer throw errors when trying to process 0-byte files
 * Fix: Fixed an issue that could cause Simply Static to not remove all files when uninstalling
 * Fix: Local directories are now always chmod'd to 0755 so that they're readable
 * Fix: Additional errors will be caught and displayed when generating static files
@@ -171,7 +763,7 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 
 = 1.7.0, October 06, 2016 =
 
-* New: Destination URLs can now begin with // (in addition to http:// & https://)
+* New: Destination URLs can now begin with // (in addition to HTTP:// & HTTPS://)
 * New: You can now use relative URLs (instead of absolute URLs) for the static site
 * New: Now able to export a static site for use offline
 
@@ -186,13 +778,13 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 
 = 1.6.1, July 14, 2016 =
 
-* Fix: No more "Call to a member function find() on a non-object" error. Thanks jwatkins0101!
+* Fix: No more "Call to a member function find() on a non-object" error. Thanks, jwatkins0101!
 
 = 1.6.0, June 07, 2016 =
 
 * Improvement: The DomDocument PHP extension is no longer required (replaced by SimpleHtmlDomParser)
 * Fix: No longer creating empty html attributes
-* Fix: No longer throwing the 'Function name must be a string' error in diagnostics. Thanks andrew-s!
+* Fix: No longer throwing the 'Function name must be a string' error in diagnostics. Thanks, Andrew-s!
 
 = 1.5.1, June 05, 2016 =
 
@@ -228,11 +820,11 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 
 = 1.3.3, April 13, 2016 =
 
-* Fix: Attempt #3 at fixing Simply Static's upgrading process :'(
+* Fix Attempt #3 at fixing Simply Static's upgrading process :'(
 
 = 1.3.2, April 12, 2016 =
 
-* Fix: Attempt #2 at fixing Simply Static's upgrading process :(
+* Fix Attempt #2 at fixing Simply Static's upgrading process :(
 
 = 1.3.1, April 12, 2016 =
 
@@ -249,7 +841,7 @@ No. We haven't done any testing on Windows and, based on user feedback, it seems
 
 = 1.2.3, March 8, 2016 =
 
-* Fix: http and https on the same domain are treated as the same site (no redirect files will be created)
+* Fix: HTTP and HTTPS on the same domain are treated as the same site (no redirect files will be created)
 * New: Added support for the img tag's srcset attribute, used for responsive images
 
 = 1.2.2, January 26, 2016 =

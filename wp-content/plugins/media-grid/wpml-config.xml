@@ -1,0 +1,18 @@
+<wpml-config>
+    <custom-types>
+		<custom-type translate="0">mg_grids</custom-type>
+		<custom-type translate="1">mg_items</custom-type>
+	</custom-types> 
+	 
+	<taxonomies>
+		<taxonomy translate="1">mg_item_categories</taxonomy>
+	</taxonomies>
+	
+	<admin-texts>
+		<key name="mg_all_filter_txt"/>
+		<key name="mg_no_results_txt"/>
+        <key name="mg_inf_scroll_btn_txt"/>
+	</admin-texts>
+</wpml-config>
+
+
